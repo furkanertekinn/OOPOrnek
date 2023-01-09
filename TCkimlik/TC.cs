@@ -24,7 +24,7 @@ namespace KapsullemeOdev
                 {
                     bool kontrol = false;
 
-                    for (int i = 0; i < value.Length - 1; i++)
+                    for (int i = 0; i < value.Length; i++)
                     {
                         bool karakterKontrol = char.IsNumber(value[i]);
 
