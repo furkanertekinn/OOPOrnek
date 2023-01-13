@@ -12,13 +12,33 @@ namespace KalitimOdev
         {
             Bilgisayar B1 = new Bilgisayar();
 
-            B1.marka = "Lenova";
-            B1.model = "z50";
-            B1.islemci = "i7";
-            B1.alisFiyat = 15000;
-            B1.satisFiyat = 20000;
-            B1.kampanyaFiyat = 15500;
-            B1.barkod = "1234567890";
+            Console.Write("Lütfen bilgisayarın markasını giriniz : ");
+            B1.marka = Console.ReadLine();
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın modelini giriniz : ");
+            B1.model = Console.ReadLine();
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın işlemcisini giriniz : ");
+            B1.islemci = Console.ReadLine();
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın alış fiyatını giriniz : ");
+            B1.alisFiyat = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın satış fiyatını giriniz : ");
+            B1.satisFiyat = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın kampanya fiyatını giriniz : ");
+            B1.kampanyaFiyat = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine(" ");
+
+            Console.Write("Lütfen bilgisayarın barkod numarasını giriniz : ");
+            B1.barkod = Console.ReadLine();
+
 
             SanalDataBase.yeniUrunEkle(B1);
 
@@ -32,7 +52,7 @@ namespace KalitimOdev
             B2.kampanyaFiyat = 15500;
             B2.barkod = "1234567890";
 
-            SanalDataBase.yeniUrunEkle(B2); 
+            SanalDataBase.yeniUrunEkle(B2);
 
         }
     }
