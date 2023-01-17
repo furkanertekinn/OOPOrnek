@@ -53,10 +53,10 @@ namespace Pekistirme
                     }
                 }
 
-                else 
+                else
                 {
                     Console.WriteLine("TC kimlik numaranız 11 haneli olmalıdır !");
-                   
+
                 }
             }
         }

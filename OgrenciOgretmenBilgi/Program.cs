@@ -14,6 +14,10 @@ namespace Pekistirme
             {
                 Ogrenci O1 = new Ogrenci();
 
+                Console.WriteLine("Öğrenci");
+                Console.WriteLine("-------");
+                Console.WriteLine(" ");
+
                 Console.Write("Lütfen isminizi giriniz : ");
                 O1.isim = Console.ReadLine();
 
@@ -23,13 +27,19 @@ namespace Pekistirme
                 Console.Write("Lütfen TC kimlik numaranızı giriniz : ");
                 O1._tcno = Console.ReadLine();
 
-                //O1._no = 1;
+                O1.NoUret();
 
-                Console.WriteLine("Öğrenci numaranız : " + O1._no.ToString());
+                Console.WriteLine("Öğrenci numaranız : " + O1.No.ToString());
 
                 Console.WriteLine("Öğrenci sistem giriş şifresi : " + O1.OgrenciSistemSifre.ToString());
+                Console.WriteLine(" ");
 
                 Console.WriteLine("---------------------------------------------------");
+                Console.WriteLine(" ");
+
+                Console.WriteLine("Öğretmen");
+                Console.WriteLine("--------");
+                Console.WriteLine(" ");
 
                 Ogretmen O2 = new Ogretmen();
 
@@ -42,13 +52,12 @@ namespace Pekistirme
                 Console.Write("Lütfen TC kimlik numaranızı giriniz : ");
                 O2._tcno = Console.ReadLine();
 
-                O2._ogretmenSirasi = 10;
-
-                Console.WriteLine("Öğretmen sıranız : " + O2._ogretmenSirasi.ToString());
+                Console.WriteLine("Öğretmen sıranız : " + O2.OgretmenSirasi.ToString());
 
                 Console.Write("Öğretmen sistem giriş şifresi : " + O2.OgretmenSistemSifre.ToString());
 
-                Console.WriteLine(" ");
+                System.Threading.Thread.Sleep(3000);
+                Console.Clear();
 
                 Console.WriteLine("Yeni bir değer girmek istiyor musunuz ? (E/H)");
                 string kullaniciSecim = Console.ReadLine();

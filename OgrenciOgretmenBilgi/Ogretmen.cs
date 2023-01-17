@@ -8,27 +8,33 @@ namespace Pekistirme
 {
     public class Ogretmen : Genel
     {
-        public int _ogretmenSirasi;
-
-        public int OgretmenSirasi
-        {
-            get { return this._ogretmenSirasi; }
-
-            set
-            {
-                for (int i = 0; i < 55000; i++)
-                {
-                    _ogretmenSirasi = _ogretmenSirasi + 10;
-                }
-
-                this._ogretmenSirasi = value;
-            }
-        }
-        
         public Ogretmen()
         {
             this._ogretmensistemsifre = SifreUret();
+            this._ogretmenSirasi = OgretmenSirasiUret();
         }
+
+        int _ogretmenSirasi;
+
+        public int OgretmenSirasi
+        {
+            get
+            {
+                return this._ogretmenSirasi;
+            }
+
+            private set
+            {
+                this._ogretmenSirasi = value;
+            }
+        }
+
+        public int OgretmenSirasiUret()
+        {
+            Random rnd3 = new Random();
+            return rnd3.Next(0, 100);
+        }
+
 
         int _ogretmensistemsifre;
 
@@ -46,8 +52,8 @@ namespace Pekistirme
         }
         public int SifreUret()
         {
-            Random rnd = new Random();
-            return rnd.Next(1000, 10000);
+            Random rnd4 = new Random();
+            return rnd4.Next(10001, 20000);
         }
     }
 }

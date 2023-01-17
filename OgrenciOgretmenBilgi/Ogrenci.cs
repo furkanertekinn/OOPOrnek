@@ -8,26 +8,29 @@ namespace Pekistirme
 {
     public class Ogrenci : Genel
     {
-        public int _no = 1;
+        public Ogrenci()
+        {
+            this._ogrencisistemsifre = SifreUret();
+            this._no = NoUret();
+        }
 
+        int _no;
         public int No
         {
-            get { return this._no; }
-
-            set
+            get
             {
-                for (int i = 0; i < 8000; i++)
-                {
-                    _no = _no + 1;
-                }
-
+                return this._no;
+            }
+            private set
+            {
                 this._no = value;
             }
         }
 
-        public Ogrenci()
+        public int NoUret()
         {
-            this._ogrencisistemsifre = SifreUret();
+            Random rnd1 = new Random();
+            return rnd1.Next(0, 1000);
         }
 
         int _ogrencisistemsifre;
@@ -46,8 +49,8 @@ namespace Pekistirme
         }
         public int SifreUret()
         {
-            Random rnd = new Random();
-            return rnd.Next(1000, 10000);
+            Random rnd2 = new Random();
+            return rnd2.Next(1000, 10000);
         }
     }
 }
