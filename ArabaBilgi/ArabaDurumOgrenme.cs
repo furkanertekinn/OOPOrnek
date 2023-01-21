@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Pekistirme3
 {
-    public enum ArabaDurumOgrenme 
+    public enum ArabaPlakaSorgulama
     {
-        //plakalar olacak
-        kaputdegismis = 120,
-        kapidegismis = 121,
-        tampondegismis = 122,
-        motorarizali = 123,
-        tamamenboyali = 124,
-        lokalboya = 125,
+        Ankara = 06,
+        Istanbul = 34,
+        Mersin = 33,
+        Izmir = 35,
+        Samsun = 55,
+        Tokat = 60,
+        Sanlıurfa = 63,
     }
 }

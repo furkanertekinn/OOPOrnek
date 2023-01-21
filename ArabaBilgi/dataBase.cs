@@ -9,12 +9,12 @@ namespace Pekistirme3
 {
     public class dataBase
     {
-        ArrayList DB=new ArrayList();
+        ArrayList DB = new ArrayList();
 
-        public ArabaDurumOgrenme arabaYeniKayit(Araba A)
+        public ArabaPlakaSorgulama arabaYeniKayit(Araba A)
         {
             DB.Add(A);
-            return ArabaDurumOgrenme.tampondegismis;
+            return ArabaPlakaSorgulama.Istanbul;
         }
     }
 }

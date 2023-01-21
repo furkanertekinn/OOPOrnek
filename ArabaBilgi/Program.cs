@@ -10,36 +10,39 @@ namespace Pekistirme3
     {
         public static void SecilenDeger(int secilenMadde)
         {
+            Console.Write("Arabanın Sorunları : ");
             while (true)
             {
-                if (119 < secilenMadde && secilenMadde < 126)
+                int[] dizi = new int[6];
+
+
+                if (0 < secilenMadde && secilenMadde < 7)
                 {
-                    if (secilenMadde == 120)
+                    if (secilenMadde == 1)
                     {
                         Console.WriteLine("Arabada Kaput Değişmesi vardır.");
                     }
-                    else if (secilenMadde == 121)
+                    else if (secilenMadde == 2)
                     {
                         Console.WriteLine("Arabada Kapı Değişmesi vardır.");
                     }
-                    else if (secilenMadde == 122)
+                    else if (secilenMadde == 3)
                     {
                         Console.WriteLine("Arabada Tampon Değişmesi vardır.");
-                        break;
                     }
-                    else if (secilenMadde == 123)
+                    else if (secilenMadde == 4)
                     {
                         Console.WriteLine("Arabada Motor Arızası vardır.");
                     }
-                    else if (secilenMadde == 124)
+                    else if (secilenMadde == 5)
                     {
                         Console.WriteLine("Araba Tamamen Boyalıdır.");
                     }
-                    else if (secilenMadde == 125)
+                    else if (secilenMadde == 6)
                     {
                         Console.WriteLine("Araba Lokal Boyalıdır.");
                     }
-                    break;
+                    Console.Clear();
                 }
 
                 else
@@ -49,9 +52,12 @@ namespace Pekistirme3
 
                 Console.WriteLine("Eklemek istediğiniz başka madde var mı ?  (E/H)");
                 string eorh = Console.ReadLine();
+                Console.Clear();
 
                 if (eorh.ToUpper() == "E")
                 {
+                    Console.Write("Eklemek istediğiniz diğer maddeyi giriniz : ");
+                    secilenMadde = Convert.ToInt32(Console.ReadLine());
                     continue;
                 }
                 else if (eorh.ToUpper() == "H")
@@ -60,10 +66,10 @@ namespace Pekistirme3
                 }
                 else
                 {
-                    Console.WriteLine("Lütfen istenilen seçeneklerden birini seçiniz!");
+                    Console.WriteLine("Lütfen istenilen seçeneklerden birini seçiniz, baştan tekrar deneyiniz!");
+                    break;
                 }
             }
-
         }
         static void Main(string[] args)
         {
@@ -88,21 +94,20 @@ namespace Pekistirme3
 
             Console.WriteLine("Arabanın değişen veya sorunlu halleri :");
             Console.WriteLine("---------------------------------------");
-            Console.WriteLine("1-) 120 = Kaput Değişmesi");
-            Console.WriteLine("2-) 121 = Kapı değişmesi");
-            Console.WriteLine("3-) 122 = Tampon değişmesi");
-            Console.WriteLine("4-) 123 = Motor arızası");
-            Console.WriteLine("5-) 124 = Tamamen boyalı");
-            Console.WriteLine("6-) 125 = Lokal boyalı");
+            Console.WriteLine("1-) Kaput Değişmesi");
+            Console.WriteLine("2-) Kapı Değişmesi");
+            Console.WriteLine("3-) Tampon Değişmesi");
+            Console.WriteLine("4-) Motor Arızası");
+            Console.WriteLine("5-) Tamamen Boyalı");
+            Console.WriteLine("6-) Lokal Boyalı");
             Console.WriteLine(" ");
 
             Console.Write("Bir madde seçiniz : ");
             int secilenMadde = Convert.ToInt32(Console.ReadLine());
-
+            Console.Clear();
             SecilenDeger(secilenMadde);
 
             Console.Clear();
-
             Console.WriteLine("Araba ve durumu : ");
             Console.WriteLine("-----------------");
             Console.WriteLine(" ");
@@ -112,12 +117,15 @@ namespace Pekistirme3
             Console.WriteLine("Renk : " + A1.renk);
             Console.WriteLine("Fiyat : " + A1.fiyat);
             Console.WriteLine("Hasar Kaydı : " + A1.hasarKaydi);
+            Console.WriteLine(" ");
+            Console.WriteLine("Arabanın alınabilir fiyatı : " + A1.alinabilirlik);
+            Console.WriteLine("Pazarlık payı : " + A1.PazarlikPayi);
 
             dataBase D1 = new dataBase();
-            ArabaDurumOgrenme arabaKayitSonuc = D1.arabaYeniKayit(A1);
+            ArabaPlakaSorgulama arabaKayitSonuc = D1.arabaYeniKayit(A1);
 
-            int enumInt = (int)ArabaDurumOgrenme.lokalboya;
-            Console.WriteLine("Kaza durumu : " + enumInt);
+            int enumInt = (int)ArabaPlakaSorgulama.Tokat;
+            Console.WriteLine("Kayıtlı olduğu plaka : " + enumInt + " / " + ArabaPlakaSorgulama.Tokat.ToString());
 
             Console.ReadLine();
         }
