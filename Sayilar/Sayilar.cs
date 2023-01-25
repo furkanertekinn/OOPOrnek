@@ -11,7 +11,7 @@ namespace SayilarOdev
         public int enBuyuk = int.MinValue;
         public int enKucuk = int.MaxValue;
         public double ortalama = 0;
-        public int[] veriler=new int[5];
+        public int[] veriler = new int[5];
 
         public Sayilar()
         {
@@ -27,6 +27,7 @@ namespace SayilarOdev
                     Console.Write("Lütfen bir sayı giriniz : ");
                     int kullaniciSayi = Convert.ToInt32(Console.ReadLine());
                     veriler[i] = kullaniciSayi;
+                    Console.WriteLine(" ");
                     break;
                 }
             }
@@ -40,7 +41,7 @@ namespace SayilarOdev
                 {
                     enBuyuk = veriler[i];
                 }
-                else if (veriler[i] < enKucuk)
+                if (veriler[i] < enKucuk)
                 {
                     enKucuk = veriler[i];
                 }

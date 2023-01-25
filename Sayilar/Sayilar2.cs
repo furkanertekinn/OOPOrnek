@@ -8,7 +8,7 @@ namespace SayilarOdev
 {
     public class Sayilar2 : Sayilar
     {
-        public int[] asallar=new int[5];
+        public int[] asallar = new int[5];
 
         public void Bul2()
         {
@@ -23,21 +23,32 @@ namespace SayilarOdev
                     if (kalan == 0)
                     {
                         kontrol = false;
-                        break;
                     }
+                    break;
+
                 }
                 if (kontrol)
                 {
-                    asallar[sonuc] = sayi;
-                    sonuc++;
+                    if (sayi % 5 == 0 || sayi % 3 == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        asallar[sonuc] = sayi;
+                        sonuc++;
+                    }
                 }
             }
+
+            Console.WriteLine(" ");
             Console.Write("Girilen değerler içerisinde ki asal sayılar :");
             for (int a = 0; a < sonuc; a++)
             {
                 Console.Write(asallar[a] + " ");
+                continue;
             }
-            Console.WriteLine(" ");
+            Console.ReadLine();
         }
     }
 }
