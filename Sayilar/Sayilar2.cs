@@ -31,7 +31,20 @@ namespace SayilarOdev
                 {
                     if (sayi % 5 == 0 || sayi % 3 == 0)
                     {
+                        if (sayi == 3)
+                        {
+                            asallar[sonuc] = sayi;
+                            sonuc++;
+                        }
+                        else if (sayi == 5)
+                        {
+                            asallar[sonuc] = sayi;
+                            sonuc++;
+                        }
+                        else
+                        {
 
+                        }
                     }
                     else
                     {
