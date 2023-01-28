@@ -17,59 +17,76 @@ namespace Donustur
         }
         public Donustur(string veri)
         {
+            Console.WriteLine(" ");
             temelDizi = new int[veri.Length];
             yeniDizi = new int[veri.Length];
+
+            Console.Write("Okul numaranızın dizi hali : ");
 
             Console.Write("{");
 
             for (int i = 0; i < veri.Length; i++)
             {
                 Console.Write(veri[i]);
-                if (i<veri.Length-1)
+                if (i < veri.Length - 1)
                 {
                     Console.Write(",");
                     Console.Write(" ");
                 }
                 temelDizi[i] = (int)Char.GetNumericValue(veri[i]);
+                yeniDizi[i] = (int)Char.GetNumericValue(veri[i]);
             }
 
             Console.Write("}");
-            
+            Console.WriteLine();
         }
 
         public void Ayarla(bool yon)
         {
-            
+
             yon = true;
 
             if (yon)
             {
+                Console.WriteLine();
+                Console.Write("Sonuç : ");
                 Console.Write("{");
-                temelDizi[7] = yeniDizi[7];
-                Console.Write(yeniDizi[7]);
 
-                for (int i = 7; i <= yeniDizi.Length; i--)
+                for (int i = 0; i < yeniDizi.Length - 1; i++)
                 {
-                    int cikartma = temelDizi[i - 1] - temelDizi[i];
+                    int cikartma = yeniDizi[i] - yeniDizi[i + 1];
                     Console.Write(cikartma);
-                    Console.Write(",");
+
+                    if (i < yeniDizi.Length - 1)
+                    {
+                        Console.Write(",");
+                        Console.Write(" ");
+                    }
                 }
-                Console.WriteLine("}");
+                Console.Write(yeniDizi[7]);
+                Console.Write("}");
             }
 
             else if (!yon)
             {
+                Console.WriteLine();
                 Console.Write("{");
-                temelDizi[0] = yeniDizi[0];
                 Console.Write(yeniDizi[0]);
+                Console.Write(",");
+                Console.Write(" ");
 
-                for (int i = 0; i < yeniDizi.Length; i++)
+                for (int i = 0; i < yeniDizi.Length - 1; i++)
                 {
-                    int cikartma = temelDizi[i + 1] - temelDizi[i];
+                    int cikartma = yeniDizi[i + 1] - yeniDizi[i];
                     Console.Write(cikartma);
-                    Console.Write(",");
+
+                    if (i < yeniDizi.Length - 2)
+                    {
+                        Console.Write(",");
+                        Console.Write(" ");
+                    }
                 }
-                Console.WriteLine("}");
+                Console.Write("}");
             }
 
             else

@@ -10,18 +10,22 @@ namespace Donustur
     {
         static void Main(string[] args)
         {
-            Console.Write("Lütfen bir veri giriniz : ");
-            string kullaniciVeri=Console.ReadLine();
+            Console.Write("Lütfen okul numaranızı giriniz : ");
+            string kullaniciVeri = Console.ReadLine();
 
-            Donustur D1 = new Donustur(kullaniciVeri);
-           
-            D1.Ayarla(true);
+            if (kullaniciVeri.Length == 8)
+            {
+                Donustur D1 = new Donustur(kullaniciVeri);
 
-            Console.Write(D1.yeniDizi);
-            Console.Write(D1.temelDizi);
+                D1.Ayarla(true);
+            }
+
+            else
+            {
+                Console.WriteLine("Lütfen okul numaranızı kontrol ediniz !");
+            }
 
             Console.ReadLine();
-
         }
     }
 }
