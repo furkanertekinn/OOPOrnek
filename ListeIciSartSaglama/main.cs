@@ -26,6 +26,9 @@ namespace LinqOdev
             Console.Write("İsmi 'A' harfi ile başlayan kişi sayısı : " + sonuc.Count());
             Console.WriteLine();
 
+            var isimdeBbulma = musteriListe.Where(m => m.isim.StartsWith("B")).Count();
+            Console.Write("İsmi 'B' harfi ile başlayan kişi sayısı : " + isimdeBbulma);
+
             var soyisimdeBulunan = musteriListe.Where(i => i.soyisim.Contains('e'));
             Console.Write("Soyisminde 'E' harfi bulunan kişi sayısı : " + soyisimdeBulunan.Count());
             Console.WriteLine();
@@ -35,7 +38,7 @@ namespace LinqOdev
             Console.WriteLine();
 
             var hepsiBir = from I in musteriListe
-                           where I.isim.StartsWith("A") && I.soyisim.Contains("e") && I.dogumTarih.Year > 1985
+                           where I.isim.StartsWith("A") && I.soyisim.Contains("e") && I.dogumTarih.Year > 1985 && I.isim.StartsWith("B")
                            select I;
             Console.Write("Bütün şartların sağlandığı kişi sayısı : " + hepsiBir.Count());
 
