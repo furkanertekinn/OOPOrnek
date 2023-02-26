@@ -26,8 +26,8 @@ namespace LinqOdev
             Console.Write("İsmi 'A' harfi ile başlayan kişi sayısı : " + sonuc.Count());
             Console.WriteLine();
 
-            var isimdeBbulma = musteriListe.Where(m => m.isim.EndsWith("n")).Count();
-            Console.Write("İsmi 'n' harfi ile biten kişi sayısı : " + isimdeBbulma);
+            var isimdeSonBulma = musteriListe.Where(m => m.isim.EndsWith("n")).Count();
+            Console.Write("İsmi 'n' harfi ile biten kişi sayısı : " + isimdeSonBulma);
             Console.WriteLine();
 
             var soyisimdeBulunan = musteriListe.Where(i => i.soyisim.Contains('e'));
