@@ -11,7 +11,7 @@ namespace SayilarOdev
         public int enBuyuk = int.MinValue;
         public int enKucuk = int.MaxValue;
         public double ortalama = 0;
-        public int[] veriler = new int[5];
+        public int[] veriler = new int[6];
 
         public Sayilar()
         {

@@ -10,7 +10,7 @@ namespace SayilarOdev
     {
         static void Main(string[] args)
         {
-            Sayilar S1 = new Sayilar(5);
+            Sayilar S1 = new Sayilar(6);
 
             S1.Bul();
             Console.Clear();

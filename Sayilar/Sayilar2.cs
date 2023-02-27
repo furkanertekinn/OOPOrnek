@@ -8,7 +8,7 @@ namespace SayilarOdev
 {
     public class Sayilar2 : Sayilar
     {
-        public int[] asallar = new int[5];
+        public int[] asallar = new int[6];
 
         public void Bul2()
         {
