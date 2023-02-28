@@ -34,12 +34,12 @@ namespace LinqOdev
             Console.Write("Soyisminde 'E' harfi bulunan kişi sayısı : " + soyisimdeBulunan.Count());
             Console.WriteLine();
 
-            var dogumYiliBulunan = musteriListe.FindAll(delegate (Musteri m) { return m.dogumTarih.Year > 1985; });
-            Console.Write("1985 yılından sonra doğmuş kişi sayısı : " + dogumYiliBulunan.Count());
+            var dogumYiliBulunan = musteriListe.FindAll(delegate (Musteri m) { return m.dogumTarih.Year > 1980; });
+            Console.Write("1980 yılından sonra doğmuş kişi sayısı : " + dogumYiliBulunan.Count());
             Console.WriteLine();
 
             var hepsiBir = from I in musteriListe
-                           where I.isim.StartsWith("A") && I.isim.EndsWith("n") && I.soyisim.Contains("e") && I.dogumTarih.Year > 1985
+                           where I.isim.StartsWith("A") && I.isim.EndsWith("n") && I.soyisim.Contains("e") && I.dogumTarih.Year > 1980
                            select I;
             Console.Write("Bütün şartların sağlandığı kişi sayısı : " + hepsiBir.Count());
 
