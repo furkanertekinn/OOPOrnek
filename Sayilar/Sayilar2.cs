@@ -41,10 +41,6 @@ namespace SayilarOdev
                             asallar[sonuc] = sayi;
                             sonuc++;
                         }
-                        else
-                        {
-
-                        }
                     }
                     else
                     {
