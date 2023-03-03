@@ -8,69 +8,6 @@ namespace Pekistirme3
 {
     class Program
     {
-        public static void SecilenDeger(int secilenMadde)
-        {
-            Console.Write("Arabanın Sorunları : ");
-            while (true)
-            {
-                int[] dizi = new int[6];
-
-
-                if (0 < secilenMadde && secilenMadde < 7)
-                {
-                    if (secilenMadde == 1)
-                    {
-                        Console.WriteLine("Arabada Kaput Değişmesi vardır.");
-                    }
-                    else if (secilenMadde == 2)
-                    {
-                        Console.WriteLine("Arabada Kapı Değişmesi vardır.");
-                    }
-                    else if (secilenMadde == 3)
-                    {
-                        Console.WriteLine("Arabada Tampon Değişmesi vardır.");
-                    }
-                    else if (secilenMadde == 4)
-                    {
-                        Console.WriteLine("Arabada Motor Arızası vardır.");
-                    }
-                    else if (secilenMadde == 5)
-                    {
-                        Console.WriteLine("Araba Tamamen Boyalıdır.");
-                    }
-                    else if (secilenMadde == 6)
-                    {
-                        Console.WriteLine("Araba Lokal Boyalıdır.");
-                    }
-                    Console.Clear();
-                }
-
-                else
-                {
-                    Console.WriteLine("Lütfen maddelerden birini seçiniz!");
-                }
-
-                Console.WriteLine("Eklemek istediğiniz başka madde var mı ?  (E/H)");
-                string eorh = Console.ReadLine();
-                Console.Clear();
-
-                if (eorh.ToUpper() == "E")
-                {
-                    Console.Write("Eklemek istediğiniz diğer maddeyi giriniz : ");
-                    secilenMadde = Convert.ToInt32(Console.ReadLine());
-                    continue;
-                }
-                else if (eorh.ToUpper() == "H")
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Lütfen istenilen seçeneklerden birini seçiniz, baştan tekrar deneyiniz!");
-                    break;
-                }
-            }
-        }
         static void Main(string[] args)
         {
             Araba A1 = new Araba();
@@ -105,9 +42,7 @@ namespace Pekistirme3
             Console.Write("Bir madde seçiniz : ");
             int secilenMadde = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
-            SecilenDeger(secilenMadde);
 
-            Console.Clear();
             Console.WriteLine("Araba ve durumu : ");
             Console.WriteLine("-----------------");
             Console.WriteLine(" ");
